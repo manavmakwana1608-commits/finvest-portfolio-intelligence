@@ -1,0 +1,97 @@
+.edit-transaction {
+    width: 100%;
+    color: #f8fafc;
+}
+
+.edit-transaction-header {
+    margin-bottom: 22px;
+}
+
+.edit-transaction-header h2 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.edit-transaction-header p {
+    margin: 6px 0 0;
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+.edit-transaction-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 17px;
+}
+
+.edit-transaction-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.edit-transaction-form label {
+    color: #cbd5e1;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.edit-transaction-form input,
+.edit-transaction-form select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 12px;
+    background: #111c2e;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    color: #f8fafc;
+    outline: none;
+    font-size: 13px;
+}
+
+.edit-transaction-form input:focus,
+.edit-transaction-form select:focus {
+    border-color: #3b82f6;
+}
+
+.edit-transaction-actions {
+    grid-column: span 2;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.transaction-form-error {
+    margin-bottom: 18px;
+    padding: 11px 13px;
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: 8px;
+    color: #ef4444;
+    font-size: 12px;
+}
+
+.transaction-cancel-btn {
+    padding: 10px 17px;
+    background: transparent;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    color: #94a3b8;
+    cursor: pointer;
+}
+
+.transaction-submit-btn {
+    padding: 10px 17px;
+    background: #2563eb;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.transaction-submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

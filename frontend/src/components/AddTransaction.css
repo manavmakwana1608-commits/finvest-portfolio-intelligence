@@ -1,0 +1,233 @@
+/* =================================
+   ADD TRANSACTION
+================================= */
+
+.add-transaction {
+    width: 100%;
+    color: #f8fafc;
+}
+
+
+/* =================================
+   HEADER
+================================= */
+
+.add-transaction-header {
+    margin-bottom: 22px;
+}
+
+.add-transaction-header h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.add-transaction-header p {
+    margin: 6px 0 0;
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+
+/* =================================
+   FORM ERROR
+================================= */
+
+.transaction-form-error {
+    margin-bottom: 18px;
+
+    padding: 11px 13px;
+
+    background: rgba(239, 68, 68, 0.08);
+
+    border: 1px solid rgba(239, 68, 68, 0.20);
+
+    border-radius: 8px;
+
+    color: #ef4444;
+
+    font-size: 12px;
+}
+
+
+/* =================================
+   FORM
+================================= */
+
+.add-transaction-form {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 17px;
+}
+
+
+/* =================================
+   FORM GROUP
+================================= */
+
+.add-transaction-form .form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.add-transaction-form label {
+    color: #cbd5e1;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* =================================
+   INPUTS / SELECTS
+================================= */
+
+.add-transaction-form input,
+.add-transaction-form select {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 11px 12px;
+
+    background: #111c2e;
+
+    border: 1px solid #334155;
+
+    border-radius: 8px;
+
+    color: #f8fafc;
+
+    outline: none;
+
+    font-size: 13px;
+}
+
+.add-transaction-form input::placeholder {
+    color: #64748b;
+}
+
+.add-transaction-form input:focus,
+.add-transaction-form select:focus {
+    border-color: #3b82f6;
+
+    box-shadow:
+        0 0 0 2px rgba(59, 130, 246, 0.08);
+}
+
+.add-transaction-form select {
+    cursor: pointer;
+}
+
+.add-transaction-form input:disabled,
+.add-transaction-form select:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+/* =================================
+   ACTIONS
+================================= */
+
+.add-transaction-actions {
+    grid-column: span 2;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 8px;
+}
+
+
+/* =================================
+   CANCEL
+================================= */
+
+.transaction-cancel-btn {
+    padding: 10px 17px;
+
+    background: transparent;
+
+    border: 1px solid #334155;
+
+    border-radius: 8px;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.transaction-cancel-btn:hover {
+    background: rgba(148, 163, 184, 0.08);
+
+    color: white;
+}
+
+
+/* =================================
+   SUBMIT
+================================= */
+
+.transaction-submit-btn {
+    padding: 10px 17px;
+
+    background: #2563eb;
+
+    border: 1px solid #2563eb;
+
+    border-radius: 8px;
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.transaction-submit-btn:hover {
+    background: #1d4ed8;
+}
+
+.transaction-submit-btn:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+    .add-transaction-form {
+        grid-template-columns: 1fr;
+    }
+
+    .add-transaction-actions {
+        grid-column: span 1;
+    }
+
+}

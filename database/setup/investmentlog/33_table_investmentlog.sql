@@ -1,0 +1,6 @@
+CREATE TABLE InvestmentLog
+(
+LogID INT AUTO_INCREMENT PRIMARY KEY,
+InvestmentName VARCHAR(100),
+LogTime DATETIME
+);

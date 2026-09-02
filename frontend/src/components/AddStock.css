@@ -1,0 +1,314 @@
+/* =====================================================
+   ADD STOCK FORM
+===================================================== */
+
+.add-stock-form {
+    width: 100%;
+    box-sizing: border-box;
+
+    color: #f8fafc;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.add-stock-header {
+    padding-right: 35px;
+
+    margin-bottom: 24px;
+}
+
+.add-stock-header h2 {
+    margin: 0;
+
+    color: #f8fafc;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    letter-spacing: -0.3px;
+}
+
+.add-stock-header p {
+    margin: 5px 0 0;
+
+    color: #64748b;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.stock-form {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 24px;
+}
+
+
+/* =====================================================
+   FORM SECTION
+===================================================== */
+
+.form-section {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.form-section-title {
+    color: #94a3b8;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.6px;
+}
+
+
+/* =====================================================
+   FORM GRID
+===================================================== */
+
+.form-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+
+/* =====================================================
+   FORM FIELD
+===================================================== */
+
+.form-field {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.form-field label {
+    color: #cbd5e1;
+
+    font-size: 11px;
+
+    font-weight: 500;
+}
+
+
+/* =====================================================
+   INPUTS
+===================================================== */
+
+.form-field input,
+.form-field select {
+    width: 100%;
+
+    height: 40px;
+
+    box-sizing: border-box;
+
+    padding: 0 12px;
+
+    border: 1px solid
+        rgba(148, 163, 184, 0.12);
+
+    border-radius: 9px;
+
+    background: #111c2e;
+
+    color: #f8fafc;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.form-field input:hover,
+.form-field select:hover {
+    border-color:
+        rgba(148, 163, 184, 0.20);
+}
+
+
+.form-field input:focus,
+.form-field select:focus {
+    border-color:
+        rgba(59, 130, 246, 0.55);
+
+    background: #142035;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(59, 130, 246, 0.08);
+}
+
+
+.form-field input::placeholder {
+    color: #475569;
+}
+
+
+/* =====================================================
+   SELECT
+===================================================== */
+
+.form-field select {
+    cursor: pointer;
+
+    appearance: auto;
+}
+
+
+/* =====================================================
+   NUMBER INPUT
+===================================================== */
+
+.form-field input[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+.form-field input[type="number"]::-webkit-inner-spin-button,
+.form-field input[type="number"]::-webkit-outer-spin-button {
+    margin: 0;
+
+    -webkit-appearance: none;
+}
+
+
+/* =====================================================
+   FORM ACTIONS
+===================================================== */
+
+.form-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    padding-top: 2px;
+
+    border-top: 1px solid
+        rgba(148, 163, 184, 0.08);
+}
+
+
+/* =====================================================
+   SUBMIT BUTTON
+===================================================== */
+
+.submit-stock-button {
+    min-width: 110px;
+
+    height: 38px;
+
+    padding: 0 16px;
+
+    border: 1px solid
+        rgba(59, 130, 246, 0.20);
+
+    border-radius: 9px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.submit-stock-button:hover:not(:disabled) {
+    background: #1d4ed8;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 14px
+        rgba(37, 99, 235, 0.18);
+}
+
+
+.submit-stock-button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+
+.submit-stock-button:disabled {
+    opacity: 0.55;
+
+    cursor: not-allowed;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        justify-content: stretch;
+    }
+
+    .submit-stock-button {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 420px) {
+
+    .add-stock-header h2 {
+        font-size: 18px;
+    }
+
+    .stock-form {
+        gap: 20px;
+    }
+
+}

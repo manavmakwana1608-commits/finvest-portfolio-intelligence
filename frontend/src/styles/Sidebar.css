@@ -1,0 +1,283 @@
+/* =====================================================
+   FINVEST SIDEBAR
+===================================================== */
+
+.sidebar {
+    width: 248px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    box-sizing: border-box;
+
+    background: #0f172a;
+
+    border-right: 1px solid rgba(148, 163, 184, 0.10);
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 26px 16px;
+
+    z-index: 100;
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 0 6px;
+
+    margin-bottom: 42px;
+}
+
+.logo-icon {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    font-size: 18px;
+}
+
+.logo h2 {
+    color: #f8fafc;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
+
+    margin: 0;
+}
+
+.logo p {
+    margin: 2px 0 0;
+
+    color: #64748b;
+
+    font-size: 11px;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* =====================================================
+   MAIN MENU
+===================================================== */
+
+.menu {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+/* =====================================================
+   MENU ITEM
+===================================================== */
+
+.menu-item {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 12px 14px;
+
+    text-decoration: none;
+
+    color: #94a3b8;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.menu-icon {
+    width: 20px;
+
+    display: flex;
+    justify-content: center;
+
+    font-size: 16px;
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.menu-item:hover {
+    background: rgba(148, 163, 184, 0.06);
+
+    color: #f8fafc;
+}
+
+
+/* =====================================================
+   ACTIVE
+===================================================== */
+
+.menu-item.active {
+    background: rgba(59, 130, 246, 0.10);
+
+    color: #60a5fa;
+
+    font-weight: 600;
+}
+
+.menu-item.active::before {
+    content: "";
+
+    position: absolute;
+
+    left: -16px;
+    top: 50%;
+
+    width: 3px;
+    height: 22px;
+
+    transform: translateY(-50%);
+
+    border-radius: 999px;
+
+    background: #3b82f6;
+}
+
+
+/* =====================================================
+   BOTTOM MENU
+===================================================== */
+
+.bottom-menu {
+    margin-top: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+.logout-btn {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 11px 14px;
+
+    border: 1px solid rgba(239, 68, 68, 0.18);
+
+    border-radius: 10px;
+
+    background: rgba(239, 68, 68, 0.08);
+
+    color: #f87171;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.logout-btn:hover {
+    background: rgba(239, 68, 68, 0.14);
+
+    color: #ef4444;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 220px;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        width: 72px;
+
+        padding: 22px 10px;
+    }
+
+    .logo {
+        justify-content: center;
+
+        padding: 0;
+
+        margin-bottom: 30px;
+    }
+
+    .logo-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo h2,
+    .logo p,
+    .menu-item span,
+    .logout-btn span {
+        display: none;
+    }
+
+    .menu-item {
+        justify-content: center;
+
+        padding: 12px;
+    }
+
+    .menu-item.active::before {
+        left: -10px;
+    }
+
+    .logout-btn {
+        padding: 12px;
+    }
+
+}

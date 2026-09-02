@@ -1,0 +1,672 @@
+/* =====================================================
+   STOCKS CARD
+===================================================== */
+
+.stocks-card {
+    width: 100%;
+    min-width: 0;
+
+    box-sizing: border-box;
+
+    margin-top: 20px;
+    padding: 22px;
+
+    background: #131c2d;
+
+    border: 1px solid rgba(148, 163, 184, 0.08);
+
+    border-radius: 16px;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   TOOLBAR
+===================================================== */
+
+.stocks-toolbar {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 14px;
+}
+
+
+/* =====================================================
+   STOCK SEARCH
+===================================================== */
+
+.stocks-search {
+    position: relative;
+
+    flex: 1;
+
+    min-width: 220px;
+    max-width: 360px;
+
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+
+    box-sizing: border-box;
+
+    background: #111c2e;
+
+    border: 1px solid rgba(148, 163, 184, 0.12);
+
+    border-radius: 10px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.stocks-search:focus-within {
+    border-color: rgba(59, 130, 246, 0.55);
+
+    box-shadow:
+        0 0 0 3px rgba(59, 130, 246, 0.08);
+}
+
+
+.stocks-search-icon {
+    position: absolute;
+
+    left: 12px;
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    pointer-events: none;
+}
+
+
+.stocks-search input {
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+
+    padding: 0 34px 0 34px;
+
+    background: transparent;
+
+    border: none;
+
+    outline: none;
+
+    color: #f8fafc;
+
+    font-size: 12px;
+}
+
+
+.stocks-search input::placeholder {
+    color: #64748b;
+}
+
+
+/* =====================================================
+   CLEAR SEARCH
+===================================================== */
+
+.clear-search {
+    position: absolute;
+
+    right: 8px;
+
+    width: 24px;
+    height: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: transparent;
+
+    color: #64748b;
+
+    cursor: pointer;
+}
+
+.clear-search:hover {
+    background: rgba(148, 163, 184, 0.08);
+
+    color: #cbd5e1;
+}
+
+
+/* =====================================================
+   FILTERS
+===================================================== */
+
+.filter-select {
+    height: 38px;
+
+    min-width: 130px;
+
+    box-sizing: border-box;
+
+    padding: 0 30px 0 11px;
+
+    background: #111c2e;
+
+    color: #cbd5e1;
+
+    border: 1px solid rgba(148, 163, 184, 0.12);
+
+    border-radius: 10px;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.filter-select:hover {
+    border-color: rgba(148, 163, 184, 0.22);
+
+    background: #142035;
+}
+
+.filter-select:focus {
+    border-color: rgba(59, 130, 246, 0.55);
+}
+
+
+/* =====================================================
+   CLEAR FILTERS
+===================================================== */
+
+.clear-filters {
+    height: 38px;
+
+    padding: 0 12px;
+
+    border: 1px solid rgba(148, 163, 184, 0.12);
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.clear-filters:hover {
+    background: rgba(148, 163, 184, 0.06);
+
+    border-color: rgba(148, 163, 184, 0.20);
+
+    color: #f8fafc;
+}
+
+
+/* =====================================================
+   TABLE HEADER INFO
+===================================================== */
+
+.stocks-table-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    margin-bottom: 10px;
+
+    color: #64748b;
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   TABLE WRAPPER
+===================================================== */
+
+.stocks-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    border: 1px solid rgba(148, 163, 184, 0.07);
+
+    border-radius: 12px;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.stocks-table {
+    width: 100%;
+
+    min-width: 720px;
+
+    border-collapse: collapse;
+
+    background: transparent;
+}
+
+
+/* =====================================================
+   TABLE HEADER
+===================================================== */
+
+.stocks-table thead {
+    background: #111c2e;
+}
+
+
+.stocks-table th {
+    padding: 13px 16px;
+
+    color: #64748b;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    text-align: left;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.4px;
+
+    white-space: nowrap;
+}
+
+
+.stocks-table .action-heading {
+    text-align: center;
+}
+
+
+/* =====================================================
+   TABLE BODY
+===================================================== */
+
+.stocks-table td {
+    padding: 14px 16px;
+
+    border-bottom: 1px solid
+        rgba(148, 163, 184, 0.07);
+
+    color: #cbd5e1;
+
+    font-size: 12px;
+
+    white-space: nowrap;
+}
+
+
+.stocks-table tbody tr {
+    transition:
+        background 0.18s ease;
+}
+
+
+.stocks-table tbody tr:hover {
+    background: rgba(148, 163, 184, 0.035);
+}
+
+
+.stocks-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =====================================================
+   SYMBOL
+===================================================== */
+
+.symbol {
+    color: #60a5fa !important;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2px;
+}
+
+
+/* =====================================================
+   COMPANY
+===================================================== */
+
+.company {
+    color: #f1f5f9 !important;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   PRICE
+===================================================== */
+
+.price {
+    color: #f8fafc !important;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   MARKET BADGE
+===================================================== */
+
+.market {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 4px 8px;
+
+    border-radius: 6px;
+
+    background: rgba(59, 130, 246, 0.09);
+
+    color: #60a5fa;
+
+    font-size: 9px;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   ACTIONS
+===================================================== */
+
+.actions {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+}
+
+
+.edit-btn,
+.delete-btn {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border-radius: 8px;
+
+    border: 1px solid transparent;
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+    transition:
+        background 0.18s ease,
+        border-color 0.18s ease,
+        color 0.18s ease;
+}
+
+
+/* Edit */
+
+.edit-btn {
+    background: rgba(59, 130, 246, 0.08);
+
+    color: #60a5fa;
+
+    border-color: rgba(59, 130, 246, 0.10);
+}
+
+
+.edit-btn:hover {
+    background: rgba(59, 130, 246, 0.16);
+
+    border-color: rgba(59, 130, 246, 0.20);
+
+    color: #93c5fd;
+}
+
+
+/* Delete */
+
+.delete-btn {
+    background: rgba(239, 68, 68, 0.07);
+
+    color: #f87171;
+
+    border-color: rgba(239, 68, 68, 0.10);
+}
+
+
+.delete-btn:hover {
+    background: rgba(239, 68, 68, 0.14);
+
+    border-color: rgba(239, 68, 68, 0.18);
+
+    color: #fca5a5;
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.empty-stocks {
+    height: 180px;
+
+    text-align: center;
+
+    vertical-align: middle;
+}
+
+
+.empty-stocks > div {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+}
+
+
+.empty-stocks strong {
+    color: #e2e8f0;
+
+    font-size: 13px;
+}
+
+
+.empty-stocks p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 11px;
+}
+
+
+.empty-clear-button {
+    margin-top: 6px;
+
+    padding: 6px 10px;
+
+    border: 1px solid rgba(148, 163, 184, 0.12);
+
+    border-radius: 7px;
+
+    background: transparent;
+
+    color: #60a5fa;
+
+    font-size: 10px;
+
+    cursor: pointer;
+}
+
+.empty-clear-button:hover {
+    background: rgba(59, 130, 246, 0.08);
+}
+
+
+/* =====================================================
+   LOADING / ERROR
+===================================================== */
+
+.stocks-state {
+    min-height: 260px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    text-align: center;
+}
+
+
+.stocks-state.error {
+    color: #f87171;
+}
+
+
+.stocks-state p {
+    margin: 0;
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+.retry-button {
+    padding: 7px 12px;
+
+    border: 1px solid rgba(59, 130, 246, 0.18);
+
+    border-radius: 8px;
+
+    background: rgba(59, 130, 246, 0.08);
+
+    color: #60a5fa;
+
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+.retry-button:hover {
+    background: rgba(59, 130, 246, 0.14);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .stocks-card {
+        padding: 18px;
+    }
+
+    .stocks-toolbar {
+        align-items: stretch;
+    }
+
+    .stocks-search {
+        max-width: none;
+
+        width: 100%;
+    }
+
+    .filter-select {
+        flex: 1;
+
+        min-width: 0;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .stocks-card {
+        padding: 14px;
+    }
+
+    .stocks-toolbar {
+        gap: 8px;
+    }
+
+    .filter-select {
+        width: 100%;
+
+        flex: none;
+    }
+
+    .clear-filters {
+        width: 100%;
+    }
+
+    .stocks-table th {
+        padding: 11px 12px;
+    }
+
+    .stocks-table td {
+        padding: 12px;
+    }
+
+}

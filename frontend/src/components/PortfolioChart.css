@@ -1,0 +1,464 @@
+/* =====================================================
+   PORTFOLIO ALLOCATION CARD
+===================================================== */
+
+.portfolio-chart-card {
+    width: 100%;
+    min-width: 0;
+    min-height: 390px;
+    height: auto;
+    box-sizing: border-box;
+
+    background: #131c2d;
+
+    border: 1px solid rgba(148, 163, 184, 0.08);
+    border-radius: 16px;
+
+    padding: 26px 24px;
+
+    overflow: visible;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.portfolio-chart-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+.portfolio-chart-header h2 {
+    margin: 0;
+
+    color: #f8fafc;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    letter-spacing: -0.3px;
+}
+
+.portfolio-chart-header p {
+    margin: 6px 0 0;
+
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.portfolio-chart-content {
+    width: 100%;
+    min-width: 0;
+    min-height: 300px;
+
+    display: grid;
+
+    grid-template-columns: 180px minmax(0, 1fr);
+
+    gap: 24px;
+
+    align-items: center;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   DONUT
+===================================================== */
+
+.portfolio-donut {
+    width: 180px;
+    height: 180px;
+
+    min-width: 180px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+
+/* =====================================================
+   HOLDINGS
+===================================================== */
+
+.portfolio-holdings {
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+}
+
+.portfolio-holdings h3 {
+    margin: 0 0 12px;
+
+    color: #f8fafc;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   HOLDINGS LIST
+===================================================== */
+
+.holdings-list {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+
+/* =====================================================
+   HOLDING ITEM
+===================================================== */
+
+.holding-item {
+    width: 100%;
+
+    min-height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    padding: 10px 0;
+
+    box-sizing: border-box;
+
+    border-bottom: 1px solid
+        rgba(148, 163, 184, 0.07);
+}
+
+
+/*
+   IMPORTANT:
+   Do not show a second line after the final holding.
+*/
+
+.portfolio-holdings .holding-item:last-child {
+    border-bottom: none;
+}
+
+
+/* =====================================================
+   HOLDING NAME
+===================================================== */
+
+.holding-name {
+    min-width: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #e2e8f0;
+
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.holding-name > span:last-child {
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   COLOR DOT
+===================================================== */
+
+.holding-dot {
+    width: 7px;
+    height: 7px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+}
+
+
+/* =====================================================
+   HOLDING VALUE
+===================================================== */
+
+.holding-value {
+    flex-shrink: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 3px;
+
+    text-align: right;
+}
+
+.holding-value strong {
+    color: #60a5fa;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    line-height: 1.2;
+}
+
+.holding-value small {
+    color: #64748b;
+
+    font-size: 9px;
+
+    line-height: 1.2;
+}
+
+
+/* =====================================================
+   TOTAL
+===================================================== */
+
+.portfolio-total {
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding-top: 14px;
+
+    margin-top: 4px;
+
+    /*
+       Only ONE separator before Total Portfolio.
+    */
+    border-top: 1px solid
+        rgba(148, 163, 184, 0.10);
+}
+
+.portfolio-total span {
+    color: #64748b;
+
+    font-size: 10px;
+}
+
+.portfolio-total strong {
+    color: #f8fafc;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.portfolio-chart-loading {
+    width: 100%;
+    min-height: 300px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.portfolio-chart-error {
+    width: 100%;
+    min-height: 300px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    color: #f87171;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.portfolio-empty {
+    width: 100%;
+    min-height: 300px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: #64748b;
+}
+
+.portfolio-empty svg {
+    margin-bottom: 12px;
+
+    color: #3b82f6;
+
+    font-size: 28px;
+}
+
+.portfolio-empty h2 {
+    margin: 0 0 6px;
+
+    color: #f8fafc;
+
+    font-size: 16px;
+}
+
+.portfolio-empty p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .portfolio-chart-content {
+        grid-template-columns: 150px minmax(0, 1fr);
+
+        gap: 18px;
+    }
+
+    .portfolio-donut {
+        width: 150px;
+        height: 150px;
+
+        min-width: 150px;
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    .portfolio-chart-card {
+        padding: 24px 20px;
+    }
+
+    .portfolio-chart-content {
+        grid-template-columns: 180px minmax(0, 1fr);
+
+        gap: 20px;
+    }
+
+    .portfolio-donut {
+        width: 180px;
+        height: 180px;
+
+        min-width: 180px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .portfolio-chart-card {
+        min-height: auto;
+
+        padding: 20px 16px;
+    }
+
+    .portfolio-chart-content {
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+
+        gap: 20px;
+    }
+
+    .portfolio-donut {
+        width: 160px;
+        height: 160px;
+
+        min-width: 160px;
+
+        margin: 0 auto;
+    }
+
+    .portfolio-holdings {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .portfolio-chart-header h2 {
+        font-size: 16px;
+    }
+
+    .portfolio-chart-header p {
+        font-size: 10px;
+    }
+
+    .portfolio-donut {
+        width: 160px;
+        height: 160px;
+
+        min-width: 160px;
+    }
+}

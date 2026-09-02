@@ -1,0 +1,12 @@
+DELIMITER //
+
+CREATE PROCEDURE ShowInvestments()
+
+BEGIN
+
+SELECT *
+FROM Investments;
+
+END//
+
+DELIMITER ;	
