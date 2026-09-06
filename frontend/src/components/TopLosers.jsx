@@ -21,7 +21,7 @@ function TopLosers() {
 
 
             const res = await axios.get(
-                "http://localhost:5000/api/portfolio/performance",
+                `${import.meta.env.VITE_API_URL}/portfolio/performance`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,

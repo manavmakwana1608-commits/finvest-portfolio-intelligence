@@ -74,7 +74,7 @@ function AddStock() {
 
 
             await axios.post(
-                "http://localhost:5000/api/stocks",
+                `${import.meta.env.VITE_API_URL}/stocks`,
                 stockData
             );
 

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "http://localhost:5000/api/stocks";
+const API = `${import.meta.env.VITE_API_URL}/stocks`;
 
 // Get all stocks
 export const getStocks = async () => {

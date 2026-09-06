@@ -56,8 +56,8 @@ function PortfolioChart() {
                 localStorage.getItem("finvestToken");
 
 
-            const response = await axios.get(
-                "http://localhost:5000/api/portfolio/allocation/data",
+         const response = await axios.get(
+    `${import.meta.env.VITE_API_URL}/portfolio/allocation/data`,
                 {
                     headers: {
                         Authorization:

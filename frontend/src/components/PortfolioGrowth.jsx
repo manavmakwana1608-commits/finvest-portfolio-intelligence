@@ -42,7 +42,7 @@ function PortfolioGrowth() {
 
 
             const response = await axios.get(
-                "http://localhost:5000/api/portfolio/growth",
+               `${import.meta.env.VITE_API_URL}/portfolio/growth`,
                 {
                     headers: {
                         Authorization:
