@@ -1,9 +1,9 @@
 const db = require("../config/db");
 
 
-// ================================
+// =======================================
 // GET ALL PORTFOLIOS
-// ================================
+// =======================================
 
 exports.getAllPortfolios = (userId, callback) => {
 
@@ -22,9 +22,9 @@ exports.getAllPortfolios = (userId, callback) => {
 };
 
 
-// ================================
+// =======================================
 // GET PORTFOLIO BY ID
-// ================================
+// =======================================
 
 exports.getPortfolioById = (
     portfolioId,
@@ -51,9 +51,9 @@ exports.getPortfolioById = (
 };
 
 
-// ================================
+// =======================================
 // CREATE PORTFOLIO
-// ================================
+// =======================================
 
 exports.createPortfolio = (data, callback) => {
 
@@ -82,9 +82,9 @@ exports.createPortfolio = (data, callback) => {
 };
 
 
-// ================================
+// =======================================
 // UPDATE PORTFOLIO
-// ================================
+// =======================================
 
 exports.updatePortfolio = (
     portfolioId,
@@ -118,9 +118,9 @@ exports.updatePortfolio = (
 };
 
 
-// ================================
+// =======================================
 // DELETE PORTFOLIO
-// ================================
+// =======================================
 
 exports.deletePortfolio = (
     portfolioId,
@@ -146,9 +146,9 @@ exports.deletePortfolio = (
 };
 
 
-// ================================
+// =======================================
 // PORTFOLIO ALLOCATION
-// ================================
+// =======================================
 
 exports.getPortfolioAllocation = (
     userId,
@@ -188,9 +188,9 @@ exports.getPortfolioAllocation = (
 };
 
 
-// ================================
+// =======================================
 // PORTFOLIO HOLDINGS
-// ================================
+// =======================================
 
 exports.getPortfolioHoldings = (
     userId,
@@ -270,9 +270,9 @@ exports.getPortfolioHoldings = (
 };
 
 
-// ================================
+// =======================================
 // PORTFOLIO PERFORMANCE
-// ================================
+// =======================================
 
 exports.getPortfolioPerformance = (
     userId,
@@ -338,16 +338,16 @@ exports.getPortfolioPerformance = (
 };
 
 
-// ================================
+// =======================================
 // PORTFOLIO GROWTH
-// ================================
+// =======================================
 
 exports.getPortfolioGrowth = (
     userId,
     callback
 ) => {
 
-    const sql = `
+    const historicalSql = `
         SELECT
 
             h.PriceDate,
@@ -380,28 +380,143 @@ exports.getPortfolioGrowth = (
     );
 
     db.query(
-        sql,
+        historicalSql,
         [userId],
-        (err, results) => {
+        (err, historicalResults) => {
 
             if (err) {
 
                 console.error(
-                    "Portfolio Growth Query Error:",
+                    "Portfolio Growth Historical Query Error:",
                     err
                 );
 
-            } else {
-
-                console.log(
-                    "Portfolio Growth Query Successful"
+                return callback(
+                    err,
+                    null
                 );
 
             }
 
-            callback(
-                err,
-                results
+            // =======================================
+            // GET CURRENT LIVE PORTFOLIO VALUE
+            // =======================================
+
+            const currentSql = `
+                SELECT
+
+                    ROUND(
+                        SUM(
+                            p.Quantity *
+                            s.CurrentPrice
+                        ),
+                        2
+                    ) AS PortfolioValue
+
+                FROM portfolio p
+
+                JOIN stocks s
+                    ON p.StockID = s.StockID
+
+                WHERE p.UserID = ?
+            `;
+
+            db.query(
+                currentSql,
+                [userId],
+                (currentErr, currentResults) => {
+
+                    if (currentErr) {
+
+                        console.error(
+                            "Portfolio Growth Current Value Query Error:",
+                            currentErr
+                        );
+
+                        return callback(
+                            currentErr,
+                            null
+                        );
+
+                    }
+
+                    // =======================================
+                    // ADD CURRENT VALUE AS FINAL DATA POINT
+                    // =======================================
+
+                    const currentValue =
+                        currentResults &&
+                        currentResults.length > 0
+                            ? currentResults[0].PortfolioValue
+                            : null;
+
+                    if (
+                        currentValue !== null &&
+                        currentValue !== undefined
+                    ) {
+
+                        const today = new Date();
+
+                        const todayDate =
+                            today.toISOString().split("T")[0];
+
+                        const finalPoint = {
+                            PriceDate: todayDate,
+                            PortfolioValue:
+                                Number(currentValue)
+                        };
+
+                        // Remove an existing point for today's
+                        // date to avoid duplicate dates.
+                        const filteredResults =
+                            historicalResults.filter(
+                                (item) => {
+
+                                    const itemDate =
+                                        new Date(
+                                            item.PriceDate
+                                        )
+                                            .toISOString()
+                                            .split("T")[0];
+
+                                    return (
+                                        itemDate !== todayDate
+                                    );
+
+                                }
+                            );
+
+                        filteredResults.push(
+                            finalPoint
+                        );
+
+                        filteredResults.sort(
+                            (a, b) =>
+                                new Date(a.PriceDate) -
+                                new Date(b.PriceDate)
+                        );
+
+                        console.log(
+                            "Portfolio Growth Query Successful"
+                        );
+
+                        return callback(
+                            null,
+                            filteredResults
+                        );
+
+                    }
+
+                    console.log(
+                        "Portfolio Growth Query Successful - No Current Value"
+                    );
+
+                    return callback(
+                        null,
+                        historicalResults
+                    );
+
+                }
             );
 
         }
@@ -410,9 +525,9 @@ exports.getPortfolioGrowth = (
 };
 
 
-// ================================
+// =======================================
 // SECTOR-WISE INVESTMENT
-// ================================
+// =======================================
 
 exports.getSectorInvestment = (
     userId,
@@ -464,9 +579,9 @@ exports.getSectorInvestment = (
 };
 
 
-// ================================
+// =======================================
 // USER INVESTMENT DISTRIBUTION
-// ================================
+// =======================================
 
 exports.getUserInvestmentDistribution = (
     callback
@@ -517,9 +632,9 @@ exports.getUserInvestmentDistribution = (
 };
 
 
-// ================================
+// =======================================
 // STOCK PROFITABILITY
-// ================================
+// =======================================
 
 exports.getStockProfitability = (
     callback
