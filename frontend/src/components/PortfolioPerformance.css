@@ -1,0 +1,200 @@
+/* =====================================================
+   PORTFOLIO PERFORMANCE
+===================================================== */
+
+.performance-card {
+    background: #131c2d;
+
+    border: 1px solid rgba(148, 163, 184, 0.08);
+
+    border-radius: 16px;
+
+    padding: 22px;
+
+    margin-top: 20px;
+
+    box-sizing: border-box;
+
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.performance-card:hover {
+    border-color: rgba(59, 130, 246, 0.18);
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.performance-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+.performance-header h2 {
+    margin: 0;
+
+    color: #f8fafc;
+
+    font-size: 18px;
+
+    font-weight: 650;
+
+    letter-spacing: -0.3px;
+}
+
+.performance-header p {
+    margin: 5px 0 0;
+
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+.performance-count {
+    padding: 5px 9px;
+
+    border-radius: 8px;
+
+    background: rgba(148, 163, 184, 0.06);
+
+    border: 1px solid rgba(148, 163, 184, 0.08);
+
+    color: #64748b;
+
+    font-size: 10px;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.performance-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+.performance-card table {
+    width: 100%;
+
+    min-width: 500px;
+
+    border-collapse: collapse;
+}
+
+.performance-card th {
+    padding: 11px 14px;
+
+    color: #64748b;
+
+    text-align: left;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.4px;
+
+    border-bottom: 1px solid
+        rgba(148, 163, 184, 0.10);
+}
+
+.performance-card td {
+    padding: 14px;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+
+    border-bottom: 1px solid
+        rgba(148, 163, 184, 0.06);
+}
+
+.performance-card tbody tr {
+    transition:
+        background 0.15s ease;
+}
+
+.performance-card tbody tr:hover {
+    background: rgba(148, 163, 184, 0.035);
+}
+
+.performance-card tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =====================================================
+   COMPANY
+===================================================== */
+
+.performance-company {
+    color: #f1f5f9 !important;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   POSITIVE / NEGATIVE
+===================================================== */
+
+.positive {
+    color: #22c55e;
+
+    font-weight: 600;
+}
+
+.negative {
+    color: #ef4444;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.empty-performance {
+    padding: 40px 20px !important;
+
+    color: #64748b !important;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .performance-card {
+        padding: 18px;
+    }
+
+    .performance-header h2 {
+        font-size: 17px;
+    }
+
+    .performance-count {
+        display: none;
+    }
+
+}

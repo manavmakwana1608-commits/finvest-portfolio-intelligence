@@ -1,0 +1,228 @@
+/* =====================================================
+   TOP LOSERS
+===================================================== */
+
+.losers-card {
+    background: #131c2d;
+
+    border: 1px solid rgba(148, 163, 184, 0.08);
+
+    border-radius: 16px;
+
+    padding: 22px;
+
+    box-sizing: border-box;
+
+    color: #f8fafc;
+
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.losers-card:hover {
+    border-color: rgba(239, 68, 68, 0.18);
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.losers-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 14px;
+}
+
+.losers-header h2 {
+    margin: 0;
+
+    color: #f8fafc;
+
+    font-size: 18px;
+
+    font-weight: 650;
+
+    letter-spacing: -0.3px;
+}
+
+.losers-header p {
+    margin: 5px 0 0;
+
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+.losers-label {
+    padding: 5px 9px;
+
+    border-radius: 8px;
+
+    background: rgba(239, 68, 68, 0.08);
+
+    border: 1px solid rgba(239, 68, 68, 0.12);
+
+    color: #ef4444;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   LIST
+===================================================== */
+
+.losers-list {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* =====================================================
+   ROW
+===================================================== */
+
+.loser-row {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 13px 0;
+
+    border-bottom: 1px solid
+        rgba(148, 163, 184, 0.07);
+
+    transition:
+        background 0.2s ease;
+}
+
+.loser-row:last-child {
+    border-bottom: none;
+}
+
+.loser-row:hover {
+    background: rgba(239, 68, 68, 0.04);
+}
+
+
+/* =====================================================
+   LEFT
+===================================================== */
+
+.loser-left {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+}
+
+.loser-rank {
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 7px;
+
+    background: rgba(239, 68, 68, 0.08);
+
+    color: #ef4444;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+.loser-row h4 {
+    margin: 0;
+
+    color: #f1f5f9;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.loser-row p {
+    margin: 4px 0 0;
+
+    color: #64748b;
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   RIGHT
+===================================================== */
+
+.loser-right {
+    text-align: right;
+}
+
+.loss {
+    color: #ef4444;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.loser-right small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #64748b;
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.empty-losers {
+    padding: 30px 10px;
+
+    color: #64748b;
+
+    text-align: center;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .losers-card {
+        padding: 18px;
+    }
+
+    .losers-header h2 {
+        font-size: 17px;
+    }
+
+}

@@ -1,0 +1,310 @@
+/* =====================================================
+   STOCKS PAGE
+===================================================== */
+
+.stocks-page {
+    width: 100%;
+    max-width: 1280px;
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
+
+    padding: 28px 34px 50px;
+}
+
+
+/* =====================================================
+   PAGE HEADER
+===================================================== */
+
+.stocks-header {
+    width: 100%;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 4px;
+}
+
+
+.stocks-header h1 {
+    margin: 0;
+
+    color: #f8fafc;
+
+    font-size: 28px;
+    font-weight: 700;
+
+    line-height: 1.15;
+
+    letter-spacing: -0.6px;
+}
+
+
+.stocks-header p {
+    margin: 6px 0 0;
+
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   ADD STOCK BUTTON
+===================================================== */
+
+.add-stock-button {
+    flex-shrink: 0;
+
+    height: 38px;
+
+    padding: 0 15px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(59, 130, 246, 0.20);
+
+    border-radius: 9px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.add-stock-button:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 14px rgba(37, 99, 235, 0.18);
+}
+
+
+.add-stock-button:active {
+    transform: translateY(0);
+}
+
+
+.add-stock-button:focus-visible {
+    outline: none;
+
+    box-shadow:
+        0 0 0 3px rgba(59, 130, 246, 0.18);
+}
+
+
+/* =====================================================
+   MODAL BACKDROP
+===================================================== */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    background: rgba(2, 6, 23, 0.72);
+
+    backdrop-filter: blur(5px);
+
+    -webkit-backdrop-filter: blur(5px);
+}
+
+
+/* =====================================================
+   MODAL CONTENT
+===================================================== */
+
+.modal-content {
+    position: relative;
+
+    width: min(520px, 100%);
+
+    max-height: calc(100vh - 40px);
+
+    box-sizing: border-box;
+
+    overflow-y: auto;
+
+    padding: 28px;
+
+    background: #131c2d;
+
+    border: 1px solid rgba(148, 163, 184, 0.12);
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 24px 70px rgba(0, 0, 0, 0.45);
+}
+
+
+/* =====================================================
+   MODAL SCROLLBAR
+===================================================== */
+
+.modal-content::-webkit-scrollbar {
+    width: 5px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.20);
+
+    border-radius: 999px;
+}
+
+
+/* =====================================================
+   CLOSE BUTTON
+===================================================== */
+
+.close-btn {
+    position: absolute;
+
+    top: 14px;
+    right: 14px;
+
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid rgba(148, 163, 184, 0.10);
+
+    border-radius: 8px;
+
+    background: rgba(148, 163, 184, 0.05);
+
+    color: #94a3b8;
+
+    font-family: inherit;
+
+    font-size: 19px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.close-btn:hover {
+    background: rgba(148, 163, 184, 0.10);
+
+    border-color: rgba(148, 163, 184, 0.16);
+
+    color: #f8fafc;
+}
+
+
+.close-btn:focus-visible {
+    outline: none;
+
+    box-shadow:
+        0 0 0 3px rgba(59, 130, 246, 0.14);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .stocks-page {
+        padding: 26px 26px 45px;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .stocks-page {
+        padding: 22px 16px 40px;
+    }
+
+    .stocks-header {
+        align-items: center;
+    }
+
+    .stocks-header h1 {
+        font-size: 25px;
+    }
+
+    .stocks-header p {
+        font-size: 11px;
+    }
+
+}
+
+
+@media (max-width: 560px) {
+
+    .stocks-header {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 14px;
+    }
+
+    .add-stock-button {
+        width: 100%;
+    }
+
+    .modal {
+        padding: 12px;
+    }
+
+    .modal-content {
+        padding: 24px 18px;
+
+        max-height: calc(100vh - 24px);
+    }
+
+}

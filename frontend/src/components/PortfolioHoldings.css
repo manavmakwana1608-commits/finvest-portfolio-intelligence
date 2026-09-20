@@ -1,0 +1,231 @@
+/* =====================================================
+   PORTFOLIO HOLDINGS
+===================================================== */
+
+.holdings-container {
+    margin-top: 20px;
+
+    background: #131c2d;
+
+    border: 1px solid rgba(148, 163, 184, 0.08);
+
+    border-radius: 16px;
+
+    padding: 22px;
+
+    box-sizing: border-box;
+
+    color: white;
+
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.holdings-container:hover {
+    border-color: rgba(59, 130, 246, 0.18);
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.holdings-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+.holdings-header h2 {
+    margin: 0;
+
+    color: #f8fafc;
+
+    font-size: 18px;
+
+    font-weight: 650;
+
+    letter-spacing: -0.3px;
+}
+
+.holdings-header p {
+    margin: 5px 0 0;
+
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+.holdings-count {
+    padding: 5px 9px;
+
+    border-radius: 8px;
+
+    background: rgba(148, 163, 184, 0.06);
+
+    border: 1px solid rgba(148, 163, 184, 0.08);
+
+    color: #64748b;
+
+    font-size: 10px;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.holdings-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+.holdings-table {
+    width: 100%;
+
+    min-width: 900px;
+
+    border-collapse: collapse;
+}
+
+
+/* =====================================================
+   TABLE HEADER
+===================================================== */
+
+.holdings-table thead {
+    background: transparent;
+}
+
+.holdings-table th {
+    padding: 11px 12px;
+
+    color: #64748b;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.35px;
+
+    text-align: left;
+
+    white-space: nowrap;
+
+    border-bottom: 1px solid
+        rgba(148, 163, 184, 0.10);
+}
+
+
+/* =====================================================
+   TABLE BODY
+===================================================== */
+
+.holdings-table td {
+    padding: 14px 12px;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+
+    white-space: nowrap;
+
+    border-bottom: 1px solid
+        rgba(148, 163, 184, 0.06);
+}
+
+.holdings-table tbody tr {
+    transition:
+        background 0.15s ease;
+}
+
+.holdings-table tbody tr:hover {
+    background: rgba(148, 163, 184, 0.035);
+}
+
+.holdings-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =====================================================
+   COMPANY
+===================================================== */
+
+.holding-company {
+    color: #f1f5f9 !important;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   CURRENT PRICE
+===================================================== */
+
+.current-price {
+    color: #e2e8f0 !important;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   PROFIT / LOSS
+===================================================== */
+
+.profit {
+    color: #22c55e;
+
+    font-weight: 600;
+}
+
+.loss {
+    color: #ef4444;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.empty-holdings {
+    padding: 42px 20px !important;
+
+    color: #64748b !important;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .holdings-container {
+        padding: 18px;
+    }
+
+    .holdings-header h2 {
+        font-size: 17px;
+    }
+
+    .holdings-count {
+        display: none;
+    }
+
+}   
